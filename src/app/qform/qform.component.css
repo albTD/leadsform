@@ -1,0 +1,106 @@
+@media(max-width:1500px){
+
+
+
+}
+
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .mat-checkbox{
+  padding-right:20px;
+  color: #e8e8e8ad;
+  
+ 
+  }
+  .mat-radio-button{
+    padding-right:20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+
+  }
+
+  .checkrow{
+ 
+    padding-left:36%;
+    padding-right:36%;
+  }
+
+  .radiorow{
+padding-left:35%;
+padding-right:35%;
+  } 
+
+  .mat-form-field{
+    width: 300px;
+  }
+
+  .formpos{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+.logoimg{
+  height:100px;
+  width:150px;
+  border-radius: 10%;
+  
+}
+.companyname{
+  padding-top:20px;
+  color:white;
+  font-weight: bold;
+  font-size:1.5rem;
+}
+button{
+  width:300px;
+  /* height:50px; */
+}
+
+mat-label{
+  color:#e8e8e8ad;
+ 
+}
+input{
+color:rgb(116, 116, 116);
+}
+
+::ng-deep.mat-form-field-underline {
+
+  background-color:#e8e8e8ad !important;
+  font-weight: bolder;
+}
+
+mat-radio-group{
+  color:rgb(88, 88, 88);
+
+}
+.radioiconin{
+ position:relative;
+ right:13px;
+}
+
+.radioicon{
+  padding-left: 27px;
+
+  background-color: white;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width:90px;
+  height:120px;
+}
+.iconn{
+font-size: 2rem;
+}
+mat-radio-button{
+  color:greenyellow
+}

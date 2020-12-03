@@ -1,0 +1,98 @@
+
+<div class="container">
+    <form class="formpos" #form="ngForm" autocomplete="off">
+   <div>{{selectedValue}}</div>
+      <div >
+        <img src="{{logo}}" alt="logo" class="logoimg">
+      </div>
+      <div >
+        <h3 class="companyname">{{company}}</h3>
+      </div>
+        <div class="form-group" *ngFor="let question of questions">
+          
+        
+          <div *ngIf="question.type==='text'">
+            <mat-form-field class="example-full-width">
+              <mat-label >{{question.question}}</mat-label>
+              <input matInput class="form-control" [(ngModel)]="fullName">
+            </mat-form-field>
+            
+          </div>
+
+
+
+         <div *ngIf="question.type==='dropdown'">
+          <mat-form-field >
+            <mat-label>{{question.question}}</mat-label>
+            <mat-select >
+              <mat-option [value]="i" *ngFor="let i of question.options" >
+                {{i}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+         </div>
+
+         <div *ngIf="question.type==='date'">
+          <mat-form-field >
+            <mat-label>{{question.question}}</mat-label>
+            <input matInput [matDatepicker]="picker" [min]="minDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          
+         </div>
+      
+
+
+        <div *ngIf="question.type==='checkBox'">
+       
+          <label style="margin-right:230px; color:#e8e8e8ad;">{{question.question}}</label>
+    <div class="row checkrow">
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <mat-checkbox *ngFor="let i of question.options">{{i}}</mat-checkbox>
+      </div>
+    </div>
+        </div>
+
+
+
+    <div *ngIf="question.type==='radio'">
+      <label class="radiolabel" style="margin-right:170px;  color:#e8e8e8ad;">{{question.question}}</label>
+      <div class="row radiorow">
+        <div class="customradio col-lg-4 col-md-6 col-sm-6" *ngFor="let i of question.options">
+      <mat-radio-group >
+        
+        <div class="radioicon" *ngIf="i=='Video Call'"><mat-radio-button value="Video Call"></mat-radio-button><div class="radioiconin"><i class="fas fa-video"></i><br>{{i}}</div></div>
+        <div class="radioicon" *ngIf="i=='Instore Visit'"><mat-radio-button value="Instore Visit"></mat-radio-button><div class="radioiconin"><i class="fas fa-store"></i><br>{{i}}</div></div>
+        <div class="radioicon" *ngIf="i=='outside'"><mat-radio-button value="outside"></mat-radio-button><div class="radioiconin"><i class="fas fa-building"></i><br>{{i}}</div></div>
+      </mat-radio-group>
+        </div>
+      </div>
+    </div>
+   
+
+<div *ngIf="question.type==='dropdown with checkbox'">
+  <mat-form-field >
+  <mat-label>{{question.question}}</mat-label>
+  <mat-select  multiple>
+    <mat-option *ngFor="let option of question.options">{{option}}</mat-option>
+</mat-select>
+  </mat-form-field>
+</div>
+
+
+
+        </div>
+
+        <button class="btn btn-lg btn-success" (click)="test()">Book Appointment</button>
+        <div style="padding-top: 20px;padding-bottom: 20px;color:#e8e8e8ad;">OR</div>
+        <button class="btn btn-lg btn-primary" (click)="test()">Existing Appointment</button>
+  </form>
+
+</div>
+
+
+
+
