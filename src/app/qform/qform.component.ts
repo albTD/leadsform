@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AngularFirestore } from '@angular/fire/firestore';
 import { QformService } from '../shared/qform.service';
-
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'qform',
   templateUrl: './qform.component.html',
@@ -15,13 +15,17 @@ export class QformComponent implements OnInit {
   company:string;
 selectedValue:string;
 i:string;
-fullName:string;
-appointmentTime:string;
+matDatepicker:string;
 name:string;
 email:string;
-
-
-  constructor(public service:QformService) { }
+time:string;
+dateselection:string;
+branch:string;
+date:string;
+place:string;
+mobno:string;
+drop:any;
+  constructor(public service:QformService,private firestore:AngularFirestore) { }
 items:boolean=true;
   ngOnInit(): void {
     this.service.getDetails().subscribe(actionArray => {
@@ -42,4 +46,16 @@ items:boolean=true;
   test(){
     console.log(this.list[9].appointmentQuestionnaire);
   }
+
+  onSubmit(form:NgForm){
+    let data =Object.assign({},form.value);
+console.log(data);
+this.firestore.collection('leads').add(data);
+  }
+
+  abc(){
+  
+  console.log(this.drop);
+}
+
 }
